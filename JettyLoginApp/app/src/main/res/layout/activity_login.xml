@@ -7,8 +7,9 @@
     tools:context=".LoginActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:id="@+id/tbLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/backgroundlogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,7 +93,7 @@
                 android:elevation="10dp">
 
                 <Button
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/btnLoginLg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/custom_selector_button"
@@ -113,7 +114,7 @@
                 android:layout_marginRight="-5dp"
                 android:elevation="10dp">
                 <ImageButton
-                    android:id="@+id/btnRegister"
+                    android:id="@+id/btnRegisterLg"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     app:srcCompat="@drawable/ic_add"
