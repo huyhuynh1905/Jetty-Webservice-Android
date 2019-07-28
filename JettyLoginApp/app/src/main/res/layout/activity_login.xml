@@ -33,8 +33,15 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="405dp"
+        android:layout_height="554dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tbLogin"
+        app:layout_constraintEnd_toStartOf="@+id/tbLogin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tbLogin">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -47,37 +54,38 @@
                 android:layout_margin="10dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="2dp">
+
                 <LinearLayout
-                    android:layout_margin="40dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="40dp"
                     android:orientation="vertical">
+
                     <EditText
-                        android:layout_marginTop="30dp"
-                        android:layout_gravity="center"
                         android:id="@+id/edtEmail"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
-                        android:hint="Email"
-                        android:inputType="textEmailAddress"
-                        android:textSize="18sp"
-                        android:drawablePadding="5dp"
-                        android:drawableLeft="@drawable/email"
-                        android:background="@drawable/custom_editext"
-                        />
-                    <EditText
                         android:layout_gravity="center"
                         android:layout_marginTop="30dp"
+                        android:background="@drawable/custom_editext"
+                        android:drawableLeft="@drawable/email"
+                        android:drawablePadding="5dp"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textSize="18sp" />
+
+                    <EditText
                         android:id="@+id/edtPass"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/custom_editext"
+                        android:drawableLeft="@drawable/password"
+                        android:drawablePadding="5dp"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:textSize="18sp"
-                        android:drawablePadding="5dp"
-                        android:drawableLeft="@drawable/password"
-                        android:background="@drawable/custom_editext"
-                        />
+                        android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -87,9 +95,9 @@
                 android:layout_below="@id/cv"
                 android:layout_alignLeft="@id/cv"
                 android:layout_alignRight="@id/cv"
+                android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
-                android:layout_marginLeft="50dp"
                 android:elevation="10dp">
 
                 <Button
@@ -113,12 +121,13 @@
                 android:layout_marginTop="-5dp"
                 android:layout_marginRight="-5dp"
                 android:elevation="10dp">
+
                 <ImageButton
                     android:id="@+id/btnRegisterLg"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/ic_add"
-                    android:background="@drawable/custom_selector_button"/>
+                    android:background="@drawable/custom_selector_button"
+                    app:srcCompat="@drawable/ic_add" />
             </RelativeLayout>
 
         </RelativeLayout>
