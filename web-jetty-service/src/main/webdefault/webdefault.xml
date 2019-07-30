@@ -335,7 +335,7 @@
   <!-- Default welcome files                                                -->
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>/views/index.html</welcome-file>
   </welcome-file-list>
 
   <!-- ==================================================================== -->
