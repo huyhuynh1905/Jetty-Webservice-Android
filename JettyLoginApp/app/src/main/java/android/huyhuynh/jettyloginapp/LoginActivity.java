@@ -64,6 +64,8 @@ public class LoginActivity extends AppCompatActivity {
                     //Trường hợp đăng nhập thành công
                     Toast.makeText(LoginActivity.this,"OK!"
                             ,Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(LoginActivity.this,DetailUser.class);
+                    startActivity(intent);
                 }
             }
         });

@@ -9,15 +9,13 @@
         android:roundIcon="@mipmap/iconapp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.FullScreen">
-
-        </activity>
+        <activity android:name=".DetailUser"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.FullScreen"></activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.FullScreen">
-
-        </activity>
+            android:theme="@style/AppTheme.FullScreen"></activity>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.FullScreen">
