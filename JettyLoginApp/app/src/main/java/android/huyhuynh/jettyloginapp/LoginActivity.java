@@ -12,10 +12,16 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
 public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     ImageButton imgRegister;
     EditText edtMail, edtPass;
+    String urlServer = "http://192.168.1.102:7070/jetty/android/login";
     final String email_pattern = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
 
 
@@ -64,11 +70,18 @@ public class LoginActivity extends AppCompatActivity {
                     //Trường hợp đăng nhập thành công
                     Toast.makeText(LoginActivity.this,"OK!"
                             ,Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(LoginActivity.this,DetailUser.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(LoginActivity.this,DetailUser.class);
+                    //startActivity(intent);
+                    requestLogin(email,pass);
                 }
             }
         });
+    }
+
+    private void requestLogin(String email, String pass) {
+        LoginRequest 
+        RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,urlServer,)
     }
 
     @Override
