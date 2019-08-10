@@ -4,12 +4,14 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:icon="@drawable/iconapp"
         android:label="Jetty"
         android:roundIcon="@mipmap/iconapp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".DetailUser"></activity>
         <activity
             android:name=".RegisterActivity"
