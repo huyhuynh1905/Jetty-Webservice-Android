@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -14,8 +15,15 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
@@ -68,10 +76,10 @@ public class LoginActivity extends AppCompatActivity {
                             ,Toast.LENGTH_LONG).show();
                 } else {
                     //Trường hợp đăng nhập thành công
-                    Toast.makeText(LoginActivity.this,"OK!"
-                            ,Toast.LENGTH_LONG).show();
+
                     //Intent intent = new Intent(LoginActivity.this,DetailUser.class);
                     //startActivity(intent);
+                    Log.d("Login","Đã bấm");
                     requestLogin(email,pass);
                 }
             }
@@ -79,9 +87,39 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void requestLogin(String email, String pass) {
-        LoginRequest 
+        HashMap data = new HashMap();
+        data.put("email",email);
+        data.put("pass",pass);
+        JSONObject jsonObject = new JSONObject(data);
+        Log.d("Login",jsonObject.toString());
         RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,urlServer,)
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urlServer,
+                jsonObject, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    String name = response.getString("name");
+                    String email = response.getString("email");
+                    String phone = response.getString("phone");
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name",name);
+                    bundle.putString("email",email);
+                    bundle.putString("phone",phone);
+                    Intent intent = new Intent(LoginActivity.this,DetailUser.class);
+                    intent.putExtra("dataBundle",bundle);
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Login",error.toString());
+            }
+        });
+
+        requestQueue.add(jsonObjectRequest);
     }
 
     @Override

@@ -22,6 +22,11 @@ public class DetailUser extends AppCompatActivity {
         btnDel = findViewById(R.id.btnDel);
         btnLogout = findViewById(R.id.btnLogout);
 
+        Bundle bundle = getIntent().getBundleExtra("dataBundle");
+        txtHoten.setText(bundle.getString("name"));
+        txtEmail.setText(bundle.getString("email"));
+        txtPhone.setText(bundle.getString("phone"));
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
