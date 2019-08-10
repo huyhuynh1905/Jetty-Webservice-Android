@@ -13,15 +13,15 @@
 	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
+			<attribute name="test" value="true"/>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
 		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
@@ -35,5 +35,15 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/Jetty/lib/javax.annotation-api-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/javax.inject-2.4.0-b31.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/javax.ws.rs-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/jersey-client.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/jersey-common.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/jersey-container-servlet-core-2.22.1.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/jersey-guava-2.22.1.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/jersey-server.jar"/>
+	<classpathentry kind="lib" path="E:/Jetty/lib/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

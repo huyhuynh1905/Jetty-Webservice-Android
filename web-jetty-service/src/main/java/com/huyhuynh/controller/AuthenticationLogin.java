@@ -34,8 +34,10 @@ public class AuthenticationLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		String email = request.getParameter("email");
-		String pass = request.getParameter("pass");
+		String pass = request.getParameter("password");
 		Connection conn = ConnectJettyLogin.getConnectJetty();
+		System.out.println(email);
+		System.out.println(pass);
 		String query = "SELECT * FROM LoginJetty WHERE email = ? AND pass = ?";
 		try {
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
@@ -43,7 +45,7 @@ public class AuthenticationLogin extends HttpServlet {
 			preparedStatement.setString(2, pass);
 			ResultSet rs = preparedStatement.executeQuery();
 			User user = null;
-			while (rs.next()) {
+			if(rs.next()) {
 				int id = rs.getInt(1);
 				String name = rs.getString(3);
 				String phone = rs.getString(4);
