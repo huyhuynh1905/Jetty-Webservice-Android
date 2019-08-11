@@ -1,0 +1,22 @@
+package com.huyhuynh.service;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+/**
+ *
+ * @author dangg
+ */
+@Path("/ep")
+public class ServiceTest {
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("/test")
+    public Response verify(String content) {
+        String result = "Rest Test Services successfully started";
+        return Response.status(200).entity(result).build();
+    }
+}

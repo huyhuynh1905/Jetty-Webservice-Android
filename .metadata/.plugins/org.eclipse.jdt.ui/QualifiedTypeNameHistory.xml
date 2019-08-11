@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.jetty.server.handler.HandlerCollection"/>
+<fullyQualifiedTypeName name="org.eclipse.jetty.webapp.WebAppContext"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.sun.jersey.spi.container.servlet.ServletContainer"/>
+<fullyQualifiedTypeName name="org.eclipse.jetty.servlet.ServletContextHandler"/>
+<fullyQualifiedTypeName name="org.eclipse.jetty.server.Server"/>
+<fullyQualifiedTypeName name="org.eclipse.jetty.servlet.ServletHolder"/>
+<fullyQualifiedTypeName name="org.glassfish.jersey.servlet.ServletContainer"/>
+<fullyQualifiedTypeName name="com.huyhuynh.service.ServiceTest"/>
+<fullyQualifiedTypeName name="com.huyhuynh.model.ServerTest"/>
+<fullyQualifiedTypeName name="com.huyhuynh.service.ServiceAndroid"/>
+<fullyQualifiedTypeName name="javax.ws.rs.POST"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="com.huyhuynh.controller.ConnectJettyLogin"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+<fullyQualifiedTypeName name="com.huyhuynh.model.User"/>
+<fullyQualifiedTypeName name="com.huyhuynh.model.UserRepository"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRootElement"/>
+<fullyQualifiedTypeName name="com.huyhuynh.model.LoginRequest"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+</qualifiedTypeNameHistroy>

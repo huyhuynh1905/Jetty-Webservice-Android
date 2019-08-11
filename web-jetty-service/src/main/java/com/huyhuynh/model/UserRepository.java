@@ -35,4 +35,37 @@ public class UserRepository {
 			return u;
 		} else return null;
 	}
+	
+	//Đăng kí tài khoản
+	public User createUser(User u) {
+		String query = "INSERT INTO LoginJetty(email,name,phone,pass) VALUES(?,?,?,?)";
+		try {
+			PreparedStatement preStatement = conn.prepareStatement(query);
+			preStatement.setString(1, u.getEmail());
+			preStatement.setString(2, u.getName());
+			preStatement.setString(3, u.getPhone());
+			preStatement.setString(4, u.getPass());
+			preStatement.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return u;
+	}
+	//kiểm tra trùng
+	public boolean checkUser(String email) {
+		String query = "SELECT * FROM LoginJetty WHERE email = ?";
+		try {
+			PreparedStatement preparedStatement = conn.prepareStatement(query);
+			preparedStatement.setString(1, email);
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.next()) {
+				return false;
+			}
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return true;
+	}
 }

@@ -1,0 +1,18 @@
+package com.huyhuynh.service;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/android")
+public class ServiceAndroid {
+	
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("/test")
+    public String verify() {
+        String result = "Rest Test Services successfully started";
+        return "Hello";
+    }
+}

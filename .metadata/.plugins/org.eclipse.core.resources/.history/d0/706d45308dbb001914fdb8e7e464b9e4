@@ -1,0 +1,31 @@
+package com.huyhuynh.service;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.huyhuynh.model.User;
+import com.huyhuynh.model.UserRepository;
+
+@Path("/android")
+public class ServiceAndroid {
+	UserRepository repo = new UserRepository();
+	
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/test")
+    public String test() {
+        String result = "Rest Test Services successfully started";
+        return "Hello";
+    }
+    
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/login")
+    public User getLogin(String email, String pass) {
+    	return repo.getUser(email, pass);
+    }
+    
+}

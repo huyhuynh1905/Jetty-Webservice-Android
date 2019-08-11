@@ -34,4 +34,21 @@ public class ServiceAndroid {
     	return repo.getUser(loginRequest.getEmail(), loginRequest.getPass());
     }
     
+    //Register
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/register")
+    public User registerUser(User user) {
+    	if(repo.checkUser(user.getEmail())) {
+    		repo.createUser(user);
+    		user.setEmail("Đăng kí thành công");
+    		return user;
+    	} else {
+    		System.out.println("Đăng kí thất bại");
+    		user.setEmail("Đăng kí thất bại! Tài khoản đã tồn tại!");
+    		return user;
+    	}
+    }
+    
 }
