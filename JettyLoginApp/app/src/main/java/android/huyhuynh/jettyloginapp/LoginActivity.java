@@ -1,8 +1,10 @@
 package android.huyhuynh.jettyloginapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -101,13 +103,17 @@ public class LoginActivity extends AppCompatActivity {
                     String name = response.getString("name");
                     String email = response.getString("email");
                     String phone = response.getString("phone");
-                    Bundle bundle = new Bundle();
-                    bundle.putString("name",name);
-                    bundle.putString("email",email);
-                    bundle.putString("phone",phone);
-                    Intent intent = new Intent(LoginActivity.this,DetailUser.class);
-                    intent.putExtra("dataBundle",bundle);
-                    startActivity(intent);
+                    if (!email.equals("Không tồn tại tài khoản!")) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("name", name);
+                        bundle.putString("email", email);
+                        bundle.putString("phone", phone);
+                        Intent intent = new Intent(LoginActivity.this, DetailUser.class);
+                        intent.putExtra("dataBundle", bundle);
+                        startActivity(intent);
+                    } else {
+                        thongBao(email);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -130,5 +136,18 @@ public class LoginActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void thongBao(String mess) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Messages");
+        builder.setMessage(mess);
+        builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.setCancelable(false);
+        builder.show();
     }
 }

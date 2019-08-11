@@ -33,11 +33,7 @@ public class UserRepository {
 		}
 		if(u!=null) {
 			return u;
-		} else {
-			u = new User(0,"","","","");
-			u.setEmail("Không tồn tại tài khoản!");
-			return u;
-		}
+		} else return null;
 	}
 	
 	//Đăng kí tài khoản
@@ -71,18 +67,5 @@ public class UserRepository {
 			e.printStackTrace();
 		}
 		return true;
-	}
-	
-	//Xoá tài khoản
-	public void deleteUser(User u) {
-		String query = "DELETE LoginJetty WHERE email = ?";
-		try {
-			PreparedStatement preStatement = conn.prepareStatement(query);
-			preStatement.setString(1, u.getEmail());
-			preStatement.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

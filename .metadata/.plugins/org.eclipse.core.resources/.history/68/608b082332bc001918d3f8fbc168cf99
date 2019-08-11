@@ -41,32 +41,12 @@ public class ServiceAndroid {
     @Path("/register")
     public User registerUser(User user) {
     	if(repo.checkUser(user.getEmail())) {
-    		System.out.println("Đăng kí thành công!");
     		repo.createUser(user);
-    		user.setEmail("Đăng kí thành công!");
+    		user.setEmail("Đăng kí thành công");
     		return user;
     	} else {
     		System.out.println("Đăng kí thất bại");
     		user.setEmail("Đăng kí thất bại! Tài khoản đã tồn tại!");
-    		return user;
-    	}
-    }
-    
-    
-    //Delete
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/delete")
-    public User deleteUser(User user) {
-    	if(!repo.checkUser(user.getEmail())) {
-    		System.out.println("Xoá thành công!");
-    		repo.deleteUser(user);
-    		user.setEmail("Xoá thành công!");
-    		return user;
-    	} else {
-    		System.out.println("Xoá thất bại");
-    		user.setEmail("Xoá thất bại! Tài khoản không tồn tại!");
     		return user;
     	}
     }

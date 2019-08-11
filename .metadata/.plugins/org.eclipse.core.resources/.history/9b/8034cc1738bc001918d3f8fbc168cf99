@@ -34,7 +34,7 @@ public class UserRepository {
 		if(u!=null) {
 			return u;
 		} else {
-			u = new User(0,"","","","");
+			u = new User();
 			u.setEmail("Không tồn tại tài khoản!");
 			return u;
 		}

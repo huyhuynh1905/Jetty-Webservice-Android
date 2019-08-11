@@ -41,7 +41,7 @@ public class ServiceAndroid {
     @Path("/register")
     public User registerUser(User user) {
     	if(repo.checkUser(user.getEmail())) {
-    		System.out.println("Đăng kí thành công!");
+    		System.out.println("Đăng kí thất bại");
     		repo.createUser(user);
     		user.setEmail("Đăng kí thành công!");
     		return user;
@@ -59,16 +59,9 @@ public class ServiceAndroid {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/delete")
     public User deleteUser(User user) {
-    	if(!repo.checkUser(user.getEmail())) {
-    		System.out.println("Xoá thành công!");
-    		repo.deleteUser(user);
-    		user.setEmail("Xoá thành công!");
-    		return user;
-    	} else {
-    		System.out.println("Xoá thất bại");
-    		user.setEmail("Xoá thất bại! Tài khoản không tồn tại!");
-    		return user;
-    	}
+    	repo.deleteUser(user);
+    	user.setEmail("Xoá thành công!");
+    	return user;
     }
     
 }
